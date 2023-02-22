@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { contactLinks } from "../constants";
 import { ThemeContext } from "../themeProvider";
 
+
 const Contact = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
@@ -43,7 +44,7 @@ const Contact = () => {
                   Name
                 </label>
                 <input
-                  type="email"
+                  type="name"
                   id="name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your name"
@@ -89,12 +90,12 @@ const Contact = () => {
               </div>
               <div className="flex justify-between ">
                 <div className="underline">
-                  <a href="mailto:aakash.sh858791@gmail.com">
-                    Send me email directly
+                  <a href="mailto:Business.8508@Gmail.com">
+                    Or email me here.
                   </a>
                 </div>
                 <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400">
-                  <a href="mailto:aakash.sh858791@gmail.com">Submit</a>
+                  Submit
                 </button>
               </div>
             </form>
@@ -109,19 +110,19 @@ const Contact = () => {
             </a> */}
             <h1 className="text-3xl font-bold">Email</h1>
             <a
-              href="hello"
+              href="mailto:Business.8508@Gmail.com"
               className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
             >
-              aakash.sh858791@gmail.com
+              Business.8508@Gmail.com
             </a>
             <h1 className="text-3xl  font-bold">Address</h1>
             <a
-              href="hello"
+              href="https://www.newarknj.gov/"
               className="mt-4  mb-12 md:text-right font-semibold text-blue-700 block uppercase"
             >
-              Jhilmil Colony, Delhi
+              Newark
               <br />
-              India
+              New Jersey
             </a>
             <h1 className="text-3xl  font-bold">Social</h1>
             <ul className="flex">
@@ -147,7 +148,7 @@ const Contact = () => {
       >
         Made with
         <div className="text-red-500 px-2 text-2xl">&#10084;</div>
-        by Aakash Sharma
+        by VonVolion
       </div>
     </div>
   );
