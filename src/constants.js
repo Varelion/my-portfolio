@@ -137,7 +137,7 @@ export const contactLinks = [
   {
     name: 'Github',
     url: 'https://img.icons8.com/doodle/40/000000/github--v1.png',
-    link: 'https://github.com/vonvolion',
+    link: 'https://github.com/Varelion',
   },
   {
     name: 'LinkedIn',
@@ -149,7 +149,7 @@ export const contactLinks = [
 export const serviceData = [
   {
     name: 'Web Application Development',
-    desc: 'Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design user interface design  authoring, including standardised code and proprietary software user experience design and search engine',
+    desc: "From conception to deployment, a full stack developer carries the skills necessary to bring any vision to life. That's my job. Alongside front-end development — the aesthetics, intuitive navigation, and general user experience, and the back-end — data storage, security, and general information flow, I bring the knowledge of cloud deployment and management.",
     img: 'https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-web-development-coding-kiranshastry-lineal-color-kiranshastry.png',
   },
   {
@@ -162,12 +162,8 @@ export const serviceData = [
   },
 
   {
-    name: 'Backend Development',
-    desc: `Graphic design is a craft where professionals create visual
-    content to communicate messages. By applying visual hierarchy and
-    page layout techniques, designers use typography and pictures to
-    meet users' specific needs and focus on the logic of displaying
-    elements in interactive designs, to optimize the user experience.`,
-    img: 'https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-backend-no-code-flaticons-flat-flat-icons.png',
+    name: 'Cloud Management',
+    desc: `--`,
+    img: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-cloud-computing-data-analytics-flaticons-lineal-color-flat-icons-3.png',
   },
 ];

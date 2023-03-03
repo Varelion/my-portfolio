@@ -22,7 +22,7 @@ const Home = () => {
 
   const memoizedComponent = useMemo(
     () => <Typical steps={steps} loop={Infinity} wrapper="p" />,
-    [steps]
+    []
   );
 
   return (
@@ -43,7 +43,7 @@ const Home = () => {
               <motion.span
                 className={darkMode ? 'block text-black' : ' text-white'}
               >
-                VonVolion
+                Varelion
               </motion.span>
               <span className="block text-blue-500 z-0 lg:inline">
                 {memoizedComponent}
