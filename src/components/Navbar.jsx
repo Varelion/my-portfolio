@@ -54,8 +54,8 @@ const Navbar = () => {
               href="/"
               className={
                 darkMode
-                  ? "text-xl font-medium text-decoration-none whitespace-nowrap text-black"
-                  : "text-xl font-medium text-decoration-none whitespace-nowrap text-white"
+                  ? "font-serif text-3xl font-medium text-decoration-none whitespace-nowrap text-black"
+                  : "font-serif text-3xl font-medium text-decoration-none whitespace-nowrap text-white"
               }
             >
               {`Varelion`}
@@ -64,7 +64,7 @@ const Navbar = () => {
           <div class="hidden justify-between items-center w-full md:flex md:w-auto ">
             <ul
               class={
-                "flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium"
+                "text-lg font-medium flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium"
               }
             >
               {links.map((el) => (

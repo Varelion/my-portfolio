@@ -48,3 +48,7 @@ code {
   width: 100%;
   z-index: 9999;
 }
+
+.varelion{
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
