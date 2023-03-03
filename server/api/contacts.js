@@ -22,7 +22,7 @@ router.post('/send', async (req, res, next) => {
       `\n`,
       email,
       `\n`,
-      message,req.body, req.headers
+      message,req.params,req.body, req.headers
     );
     // const contact = await Contact.create(req.body);
     res.json('contact');
