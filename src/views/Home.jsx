@@ -18,6 +18,13 @@ const Home = () => {
     1000,
     'Mobile Developer',
     1000,
+    'Cybersecurity',
+    1000,
+    'Cloud Management',
+    1000,
+    'DevSecOps',
+    1000,
+
   ];
 
   const memoizedComponent = useMemo(
@@ -56,10 +63,9 @@ const Home = () => {
                   : 'mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'
               }
             >
-              I am a Front-End / Full-Stack Developer. I am currently working at
-              CloudStok Technologies as a Front-End Developer
+              A software engineer with background and experience in cybersecurity, cloud management, app development, and game design.
             </p>
-            <div className="flex md:justify-start ">
+            <div className="flex md:justify-start">
               {contactLinks.map((el) => (
                 <a
                   href={el.link}

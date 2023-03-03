@@ -30,7 +30,7 @@ const About = () => {
                   : "mt-4 text-xl text-justify text-white"
               }
             >
-              A Fullstack Academy alumn who is working on their Computer Science Bachelors, after working in cybersecurity with the military. As a cybernaut, I've a passion for all things technology, from IT infrastructure, to software engineering, to machine learning.
+              A Fullstack Academy alumn who is working on their Computer Science Bachelors, after working in cybersecurity with the military. As a cybernaut, I've a passion for all things technology, from IT infrastructure, to software engineering, to machine learning. This mix of expertise ultimately brought me to DevSecOps.
             </p>
           </motion.div>
           <motion.div
