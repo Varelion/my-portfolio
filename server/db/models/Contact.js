@@ -4,6 +4,11 @@ const axios = require('axios');
 
 
 const Contact = db.define('contact', {
+  ip: {
+    type: Sequelize.STRING,
+    unique: false,
+    allowNull: false,
+  },
   name: {
     type: Sequelize.STRING,
     unique: false,
@@ -12,13 +17,13 @@ const Contact = db.define('contact', {
   email: {
     type: Sequelize.STRING,
     unique: false,
-    allowNull:false,
+    allowNull: false,
   },
-  message:{
+  message: {
     type: Sequelize.TEXT,
     unique: false,
     allowNull: false,
-  }
+  },
 });
 
 module.exports = Contact;
