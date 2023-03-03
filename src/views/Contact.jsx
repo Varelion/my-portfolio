@@ -103,7 +103,7 @@ const Contact = () => {
           <div className="w-full flex flex-col md:items-end  -mt-28 ">
             <h1 className="text-3xl font-bold">Phone</h1>
             <a
-              href="hello"
+              href="tel:+18628888508"
               className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
             >
               +1 (862)-888-8508
@@ -111,7 +111,7 @@ const Contact = () => {
 
             <h1 className="text-3xl font-bold">Discord</h1>
             <a
-              href="hello"
+              href="https://discord.gg/hvA6HF3gw3"
               className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
             >
               JOESTAR#8888
