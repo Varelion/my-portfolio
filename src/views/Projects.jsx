@@ -23,7 +23,6 @@ const Projects = () => {
           <Card />
           <Card />
           <Card />
-          <Card />
         </div>
         {/* Commented below is the show-more button */}
         {/* <a
