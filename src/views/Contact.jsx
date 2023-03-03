@@ -16,7 +16,7 @@ const Contact = () => {
       }
     >
       <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 ">
-        <h2 className="text-5xl font-bold px-4 md:px-0 text-center z-0">
+        <h2 className="text-5xl font-bold px-4 md:px-0 text-center z-0 mb-12 -mt-2">
           Contact
         </h2>
         <div>
@@ -100,14 +100,22 @@ const Contact = () => {
               </div>
             </form>
           </div>
-          <div className="w-full flex flex-col md:items-end  mt-12 md:mt-6">
-            {/* <h1 className="text-3xl font-bold">Phone</h1>
+          <div className="w-full flex flex-col md:items-end  -mt-28 ">
+            <h1 className="text-3xl font-bold">Phone</h1>
             <a
               href="hello"
               className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
             >
-              +91 8285631499
-            </a> */}
+              +1 (862)-888-8508
+            </a>
+
+            <h1 className="text-3xl font-bold">Discord</h1>
+            <a
+              href="hello"
+              className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
+            >
+              +1 (862)-888-8508
+            </a>
             <h1 className="text-3xl font-bold">Email</h1>
             <a
               href="mailto:Business.8508@Gmail.com"
@@ -142,8 +150,8 @@ const Contact = () => {
       <div
         className={
           darkMode
-            ? "w-full bg-white text-black text-lg py-4 flex justify-center -mt-16"
-            : "w-full bg-gray-900 text-white text-lg py-4 flex justify-center -mt-16"
+            ? "w-full bg-white text-black text-lg py-4 flex justify-center "
+            : "w-full bg-gray-900 text-white text-lg py-4 flex justify-center "
         }
       >
         Made with

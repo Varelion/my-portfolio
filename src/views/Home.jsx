@@ -66,7 +66,7 @@ const Home = () => {
                   className="mr-5 cursor-pointer mt-8 hover:scale-125"
                 >
                   <img alt="" src={el.url} />
-                  {/* <p className="text-md mt-2 hover:hidden">{el.name}</p> */}
+                  <p className="text-md mt-2 hover:hidden">{el.name}</p>
                 </a>
               ))}
             </div>
