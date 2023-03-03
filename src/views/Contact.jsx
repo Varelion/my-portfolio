@@ -20,7 +20,7 @@ const Contact = () => {
           Contact
         </h2>
         <div>
-          <h4 className="mt-12 text-3xl font-semibold text-blue-500">
+          <h4 className="mt-12 text-3xl font-semibold text-blue-500 mt-4">
             Connect with me
           </h4>
           <p className="text-gray-500 text-xl">
@@ -30,7 +30,7 @@ const Contact = () => {
           </p>
         </div>
         <div className="flex justify-between items-center md:items-stretch  flex-col md:flex-row pb-24">
-          <div className="w-full md:pr-8">
+          <div className="w-full md:pr-8 ">
             <form>
               <div class="my-6">
                 <label
@@ -94,7 +94,7 @@ const Contact = () => {
                     Or email me here.
                   </a>
                 </div>
-                <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400">
+                <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400 ">
                   Submit
                 </button>
               </div>
@@ -132,7 +132,7 @@ const Contact = () => {
                   className="md:ml-6 md:mr-0 mr-6 cursor-pointer mt-4 hover:scale-125 flex flex-col justify-center items-center"
                 >
                   <img alt="" src={el.url} />
-                  {/* <p className="text-md mt-2 hover:hidden">{el.name}</p> */}
+                  <p className="text-md mt-2 hover:hidden">{el.name}</p>
                 </a>
               ))}
             </ul>
@@ -142,8 +142,8 @@ const Contact = () => {
       <div
         className={
           darkMode
-            ? "w-full bg-white text-black text-lg py-3 flex justify-center md:mt-20"
-            : "w-full bg-gray-900 text-white text-lg py-3 flex justify-center md:mt-20"
+            ? "w-full bg-white text-black text-lg py-4 flex justify-center -mt-16"
+            : "w-full bg-gray-900 text-white text-lg py-4 flex justify-center -mt-16"
         }
       >
         Made with
