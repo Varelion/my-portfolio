@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from 'react';
 import { contactLinks } from '../constants';
 import { ThemeContext } from '../themeProvider';
 import axios from 'axios';
+import Confirmed from "../views/Confirmed";
+
 
 const Contact = () => {
   const theme = useContext(ThemeContext);
@@ -9,10 +11,14 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-
+  const [isHoveringElementVisible, setIsHoveringElementVisible] = useState(
+    false
+  );
 
   const handleSubmit = async (evt) => {
   evt.preventDefault();
+    setIsHoveringElementVisible(true);
+
   try {
     console.log({name, email, message});
     const response = await axios.post('http://localhost:7777/api/contacts/send', {
@@ -20,7 +26,8 @@ const Contact = () => {
       email: email,
       message: message,
     });
-    console.log(response.data); // Handle the response data here
+    alert("Thank you for your message; I will reply shortly!"); // Handle the response data here
+
   } catch (error) {
     console.error(error); // Handle the error here
   }
@@ -56,6 +63,9 @@ const Contact = () => {
           : 'bg-black pt-24 text-white md:h-screen'
       }
     >
+      {isHoveringElementVisible && (
+        <Confirmed name={name} email={email} message={message} />
+      )}
       <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 ">
         <h2 className="text-5xl font-bold px-4 md:px-0 text-center z-0 mb-12 -mt-2">
           Contact
