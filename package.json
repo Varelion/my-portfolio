@@ -31,7 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "seed": "node seed.js",
+    "seed": "node /home/z/my-portfolio/script/seed.js",
     "start:dev": "npm run build:dev & npm run start-server",
     "start:dev:logger": "LOGGING=true npm run start:dev",
     "start:dev:seed": "SEED=true npm run start:dev",
