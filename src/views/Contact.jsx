@@ -1,34 +1,59 @@
-import React, { useContext, useState } from "react";
-import { contactLinks } from "../constants";
-import { ThemeContext } from "../themeProvider";
-
+import React, { useContext, useState, useEffect } from 'react';
+import { contactLinks } from '../constants';
+import { ThemeContext } from '../themeProvider';
+import axios from 'axios';
 
 const Contact = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-  const [ip, setIp] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    console.log(`Within handleSubmit: \n IP: ${ip} \n name: ${name}, email: ${email}, message:${message}`);
+  const handleSubmit = async (evt) => {
+  evt.preventDefault();
+  try {
+    console.log({name, email, message});
+    const response = await axios.post('http://localhost:7777/api/contacts/send', {
+      name: name,
+      email: email,
+      message: message,
+    });
+    console.log(response.data); // Handle the response data here
+  } catch (error) {
+    console.error(error); // Handle the error here
   }
+};
 
   const handleChange = (evt) => {
-    console.log('handleChange evt', evt);
-  }
+    const changing = evt.target.name;
+    switch (changing) {
+      case 'name':
+        setName(evt.target.value);
+        break;
 
+      case 'email':
+        setEmail(evt.target.value);
+        break;
+
+      case 'message':
+        setMessage(evt.target.value);
+        break;
+
+      default:
+        console.log('handleChange switch case statement default');
+        break;
+    }
+  };
 
   return (
     <div
       id="contact"
       className={
         darkMode
-          ? "bg-gray-100 pt-24 md:h-screen"
-          : "bg-black pt-24 text-white md:h-screen"
+          ? 'bg-gray-100 pt-24 md:h-screen'
+          : 'bg-black pt-24 text-white md:h-screen'
       }
     >
       <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 ">
@@ -45,17 +70,16 @@ const Contact = () => {
             like to say hello, send me a message. I'd love to hear from you.
           </p>
         </div>
+
         <div className="flex justify-between items-center md:items-stretch  flex-col md:flex-row pb-24">
           <div className="w-full md:pr-8 ">
-            <form handleSubmit={handleSubmit}>
+            <form onSubmit={(evt) => handleSubmit(evt)}>
               <div className="my-6">
                 <label
-                  value={name}
-                  onChange={handleChange}
                   className={
                     darkMode
-                      ? "block mb-2 text-lg font-medium text-gray-900"
-                      : "block mb-2 text-lg font-medium text-white"
+                      ? 'block mb-2 text-lg font-medium text-gray-900'
+                      : 'block mb-2 text-lg font-medium text-white'
                   }
                 >
                   Name
@@ -63,6 +87,9 @@ const Contact = () => {
                 <input
                   type="name"
                   id="name"
+                  name="name"
+                  value={name}
+                  onChange={(evt) => handleChange(evt)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your name"
                   required
@@ -72,8 +99,8 @@ const Contact = () => {
                 <label
                   className={
                     darkMode
-                      ? "block mb-2 text-lg font-medium text-gray-900"
-                      : "block mb-2 text-lg font-medium text-white"
+                      ? 'block mb-2 text-lg font-medium text-gray-900'
+                      : 'block mb-2 text-lg font-medium text-white'
                   }
                 >
                   Email
@@ -81,6 +108,8 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  name='email'
+                  onChange={handleChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your email"
                   required
@@ -90,14 +119,18 @@ const Contact = () => {
                 <label
                   className={
                     darkMode
-                      ? "block mb-2 text-lg font-medium text-gray-900"
-                      : "block mb-2 text-lg font-medium text-white"
+                      ? 'block mb-2 text-lg font-medium text-gray-900'
+                      : 'block mb-2 text-lg font-medium text-white'
                   }
                 >
                   Message
                 </label>
                 <textarea
+                  type="text"
                   id="message"
+                  name='message'
+                  value={message}
+                  onChange={handleChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 h-28 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your message"
                   required
@@ -105,11 +138,12 @@ const Contact = () => {
               </div>
               <div className="flex justify-between ">
                 <div className="underline">
-                  <a href="mailto:Business.8508@Gmail.com">
-                    Or email me here.
-                  </a>
+                  <a href="mailto:Business.8508@Gmail.com">Or email me here.</a>
                 </div>
-                <button onSubmit={(evt)=> handleSubmit(evt)} className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400 ">
+                <button
+                  type="submit"
+                  className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400 "
+                >
                   Submit
                 </button>
               </div>
@@ -150,7 +184,8 @@ const Contact = () => {
             <h1 className="text-3xl  font-bold">Social</h1>
             <ul className="flex">
               {contactLinks.map((el, index) => (
-                <a key={index}
+                <a
+                  key={index}
                   href={el.link}
                   className="md:ml-6 md:mr-0 mr-6 cursor-pointer mt-4 hover:scale-125 flex flex-col justify-center items-center"
                 >
@@ -165,8 +200,8 @@ const Contact = () => {
       <div
         className={
           darkMode
-            ? "w-full bg-white text-black text-lg py-4 flex justify-center "
-            : "w-full bg-gray-900 text-white text-lg py-4 flex justify-center "
+            ? 'w-full bg-white text-black text-lg py-4 flex justify-center '
+            : 'w-full bg-gray-900 text-white text-lg py-4 flex justify-center '
         }
       >
         Made with

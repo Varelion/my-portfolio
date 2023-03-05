@@ -4,11 +4,6 @@ const axios = require('axios');
 
 
 const Contact = db.define('contact', {
-  ip: {
-    type: Sequelize.STRING,
-    unique: false,
-    allowNull: false,
-  },
   name: {
     type: Sequelize.STRING,
     unique: false,

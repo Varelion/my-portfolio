@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -6,6 +7,20 @@ require('dotenv').config();
 // const requestIp = require('request-ip');
 
 const app = express();
+
+// *** CORS DOESN'T GO HERE; CHECK contacts.js api !!!!
+// app.use(cors());
+
+// app.use(
+//   cors({
+//     origin: 'http://localhost:3000',
+//   })
+// );
+
+app.post('/api/contacts/send', (req, res) => {
+  // handle the request here
+  console.log('cors lol');
+});
 
 const http = require('http').Server(app);
 // const socket = require('socket.io');
