@@ -61,14 +61,14 @@ const Navbar = () => {
               {`Varelion`}
             </a>
           </div>
-          <div class="hidden justify-between items-center w-full md:flex md:w-auto ">
+          <div className="hidden justify-between items-center w-full md:flex md:w-auto ">
             <ul
-              class={
+              className={
                 "text-lg font-medium flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium"
               }
             >
-              {links.map((el) => (
-                <li className="cursor-pointer">
+              {links.map((el, index) => (
+                <li key={index} className="cursor-pointer">
                   <Link
                     to={el.route}
                     activeClass={"text-white bg-blue-500"}

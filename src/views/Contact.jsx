@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { contactLinks } from "../constants";
 import { ThemeContext } from "../themeProvider";
 
@@ -6,6 +6,22 @@ import { ThemeContext } from "../themeProvider";
 const Contact = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+  const [ip, setIp] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    console.log(`Within handleSubmit: \n IP: ${ip} \n name: ${name}, email: ${email}, message:${message}`);
+  }
+
+  const handleChange = (evt) => {
+    console.log('handleChange evt', evt);
+  }
+
+
   return (
     <div
       id="contact"
@@ -31,11 +47,12 @@ const Contact = () => {
         </div>
         <div className="flex justify-between items-center md:items-stretch  flex-col md:flex-row pb-24">
           <div className="w-full md:pr-8 ">
-            <form>
-              <div class="my-6">
+            <form handleSubmit={handleSubmit}>
+              <div className="my-6">
                 <label
-                  for="name"
-                  class={
+                  value={name}
+                  onChange={handleChange}
+                  className={
                     darkMode
                       ? "block mb-2 text-lg font-medium text-gray-900"
                       : "block mb-2 text-lg font-medium text-white"
@@ -46,15 +63,14 @@ const Contact = () => {
                 <input
                   type="name"
                   id="name"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your name"
                   required
                 />
               </div>
               <div className="mb-4">
                 <label
-                  for="email"
-                  class={
+                  className={
                     darkMode
                       ? "block mb-2 text-lg font-medium text-gray-900"
                       : "block mb-2 text-lg font-medium text-white"
@@ -65,15 +81,14 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your email"
                   required
                 />
               </div>
               <div className="mb-4">
                 <label
-                  for="message"
-                  class={
+                  className={
                     darkMode
                       ? "block mb-2 text-lg font-medium text-gray-900"
                       : "block mb-2 text-lg font-medium text-white"
@@ -83,7 +98,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 h-28 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 h-28 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your message"
                   required
                 />
@@ -94,7 +109,7 @@ const Contact = () => {
                     Or email me here.
                   </a>
                 </div>
-                <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400 ">
+                <button onSubmit={(evt)=> handleSubmit(evt)} className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400 ">
                   Submit
                 </button>
               </div>
@@ -134,8 +149,8 @@ const Contact = () => {
             </a>
             <h1 className="text-3xl  font-bold">Social</h1>
             <ul className="flex">
-              {contactLinks.map((el) => (
-                <a
+              {contactLinks.map((el, index) => (
+                <a key={index}
                   href={el.link}
                   className="md:ml-6 md:mr-0 mr-6 cursor-pointer mt-4 hover:scale-125 flex flex-col justify-center items-center"
                 >

@@ -3,26 +3,26 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 require('dotenv').config();
-const requestIp = require('request-ip');
+// const requestIp = require('request-ip');
 
 const app = express();
 
 const http = require('http').Server(app);
-const socket = require('socket.io');
+// const socket = require('socket.io');
 
-const io = socket(http);
+// const io = socket(http);
 // --------------------------
 //#region IPLOGGING
 // --------------------------
-app.use(requestIp.mw());
-let theirIp = '';
-app.use((req, res, next) => {
-  const clientIp = requestIp.getClientIp(req);
-  theirIp = clientIp;
-  const date = new Date();
-  console.log(`\n New \n Visitor \n Time: ${date}\n IP Address: ${theirIp}`);
-  next();
-});
+// app.use(requestIp.mw());
+// let theirIp = '';
+// app.use((req, res, next) => {
+//   const clientIp = requestIp.getClientIp(req);
+//   theirIp = clientIp;
+//   const date = new Date();
+//   console.log(`\n New \n Visitor \n Time: ${date}\n IP Address: ${theirIp}`);
+//   next();
+// });
 
 //#endregion IPLOGGING
 
@@ -34,14 +34,14 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // body parsing middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // API routes
 
-io.on('connection', (socket) => {
-  console.log(`User: ${socket.id} just connected! Their IP: ${theirIp}`);
+// io.on('connection', (socket) => {
+//   console.log(`User: ${socket.id} just connected! Their IP: ${theirIp}`);
 
-});
+// });
 
 
 app.get('/', (req, res) =>

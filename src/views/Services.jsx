@@ -30,8 +30,9 @@ const Services = () => {
             What I Provide
           </h4>
           <div className="mt-8 flex md:flex-row justify-between flex-col md:items-stretch items-center ">
-            {serviceData.map((el) => (
+            {serviceData.map((el, index) => (
               <motion.div
+                key={index}
                 initial="hidden"
                 whileInView={"visible"}
                 variants={{
