@@ -36,13 +36,13 @@ test:
   phases:
     preTest:
       commands:
-        - *enter command*
+        - ls
     test:
       commands:
-        - *enter command*
+        - ls
     postTest:
       commands:
-        - *enter command*
+        - ls
   artifacts:
     files:
         - location
