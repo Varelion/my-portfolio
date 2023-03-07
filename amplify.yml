@@ -47,5 +47,5 @@ test:
     files:
         - location
         - location
-    configFilePath: *location*
-    baseDirectory: *location*
+    configFilePath:
+    baseDirectory: ./my-portfolio/build
