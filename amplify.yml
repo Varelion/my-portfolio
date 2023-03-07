@@ -6,13 +6,13 @@ backend:
   phases:
     preBuild:
       commands:
-        - *enter command*
+        - npm run start:dev
     build:
       commands:
         - npm run start:dev
     postBuild:
         commands:
-        - *enter command*
+        - npm run start:dev
 frontend:
   phases:
     preBuild:
