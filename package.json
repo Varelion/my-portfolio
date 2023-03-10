@@ -29,6 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:dev": "react-scrips build",
     "build:ignorepeerdeps": "IGNORE_PEER_DEPS=true react-scripts build",
     "test": "react-scripts test",
     "seed": "node /home/z/my-portfolio/script/seed.js",
