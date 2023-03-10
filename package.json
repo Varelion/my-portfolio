@@ -31,6 +31,7 @@
     "build": "react-scripts build",
     "build:dev": "react-scrips build",
     "build:ignorepeerdeps": "IGNORE_PEER_DEPS=true react-scripts build",
+    "start-server": "nodemon server",
     "test": "react-scripts test",
     "seed": "node /home/z/my-portfolio/script/seed.js",
     "start:dev": "npm run build:dev & npm run start-server",
