@@ -28,7 +28,7 @@ router.get('/messages', async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-});
+}); 
 
 router.post('/send', async (req, res, next) => {
   try {

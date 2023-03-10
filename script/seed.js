@@ -1,8 +1,7 @@
-'use strict'
 
 const {
   db,
-  models: { User, Contact },
+  models: { User, Contact, Visitor },
 } = require('../server/db');
 
 /**
@@ -34,6 +33,15 @@ async function seed() {
       name: 'murphy',
       email: 'loremIpsum@gmail.com',
       message: 'lotem ipsum',
+    }),
+  ]);
+
+  const visitor = await Promise.all([
+    Visitor.create({
+      ip: '23123',
+    }),
+    Visitor.create({
+      ip: 23123,
     }),
   ]);
 

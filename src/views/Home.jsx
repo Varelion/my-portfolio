@@ -1,4 +1,4 @@
-import React, { useContext, useState useMemo } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import heroBg from '../assets/webdev.svg';
 import Typical from 'react-typical';
 import { contactLinks } from '../constants';
@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import cloud from '../assets/cloudBg.png';
 import cloudDark from '../assets/cloudDark.png';
+import axios from 'axios';
 
 const Home = () => {
   const theme = useContext(ThemeContext);
@@ -14,10 +15,6 @@ const Home = () => {
   const [visitors, setVisitors] = useState(0);
   const [messages, setMessages] = useState(0);
   const steps = [
-    `Visitors: `,
-    1000,
-    `Messages: `,
-    1000,
     'Full Stack Developer',
     1000,
     'Software Engineer',
@@ -26,25 +23,35 @@ const Home = () => {
     1000,
     'Cybersecurity',
     1000,
-    'Cloud Management',
+    'Cloud Engineer',
     1000,
     'DevSecOps',
     1000,
 
   ];
 
+
+ useEffect(() => {
+    const fetchVisitors = async () => {
+      try {
+        const addVisitor = await axios.post('http://localhost:7777/api/visitors/all');
+        const response = await axios.get('http://localhost:7777/api/visitors/all');
+        setVisitors(response.data);
+        const messages = await axios.get('http://localhost:7777/api/contacts/messages');
+        setMessages(messages.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchVisitors();
+    console.log(visitors)
+  }, []);
+
   const memoizedComponent = useMemo(
     () => <Typical steps={steps} loop={Infinity} wrapper="p" />,
     []
   );
-
-  useEffect(() => {
-    const visitors = axios.get
-
-    return () => {
-      second
-    }
-  }, [third])
 
 
   return (
@@ -78,7 +85,7 @@ const Home = () => {
                   : 'mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'
               }
             >
-              A software engineer with background and experience in cybersecurity, cloud management, app development, and game design.
+              A software engineer with background and experience in cybersecurity, cloud management, app development, and game design. This website has had {visitors} visitors, and {messages} messages!
             </p>
             <div className="flex md:justify-start">
               {contactLinks.map((el, index) => (
