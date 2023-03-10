@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useState useMemo } from 'react';
 import heroBg from '../assets/webdev.svg';
 import Typical from 'react-typical';
 import { contactLinks } from '../constants';
@@ -11,7 +11,13 @@ import cloudDark from '../assets/cloudDark.png';
 const Home = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+  const [visitors, setVisitors] = useState(0);
+  const [messages, setMessages] = useState(0);
   const steps = [
+    `Visitors: `,
+    1000,
+    `Messages: `,
+    1000,
     'Full Stack Developer',
     1000,
     'Software Engineer',
@@ -31,6 +37,15 @@ const Home = () => {
     () => <Typical steps={steps} loop={Infinity} wrapper="p" />,
     []
   );
+
+  useEffect(() => {
+    const visitors = axios.get
+
+    return () => {
+      second
+    }
+  }, [third])
+
 
   return (
     <>

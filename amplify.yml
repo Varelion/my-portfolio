@@ -48,4 +48,4 @@ test:
         - location
         - location
     configFilePath:
-    baseDirectory: ./my-portfolio/build
+    baseDirectory: ./my-portfolio/buildgit pul
