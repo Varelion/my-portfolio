@@ -29,10 +29,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:dev": "react-scrips build",
+    "build:dev": "npm run build -- --watch --mode=development",
     "build:ignorepeerdeps": "IGNORE_PEER_DEPS=true react-scripts build",
-    "start-server": "nodemon server",
-    "test": "react-scripts test",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",    "test": "react-scripts test",
     "seed": "node /home/z/my-portfolio/script/seed.js",
     "start:dev": "npm run build:dev & npm run start-server",
     "start:dev:logger": "LOGGING=true npm run start:dev",
