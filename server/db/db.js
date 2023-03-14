@@ -4,7 +4,8 @@ const pkg = require('../../package.json')
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
 const config = {
-  logging: true
+  logging: console.log(),
+  password:"",
 };
 
 if(process.env.LOGGING === 'true'){
