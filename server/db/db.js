@@ -5,7 +5,8 @@ const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
 const config = {
   logging: console.log(),
-  password: 'no',
+  password: '',
+  username:'ubuntu',
 };
 
 if(process.env.LOGGING === 'true'){
