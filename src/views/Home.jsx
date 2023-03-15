@@ -30,14 +30,17 @@ const Home = () => {
 
   ];
 
+    const isViewportNarrow = window.innerWidth < 766;
+
+
 
  useEffect(() => {
     const fetchVisitors = async () => {
       try {
-        const addVisitor = await axios.post('http://localhost:7777/api/visitors/all');
-        const response = await axios.get('http://localhost:7777/api/visitors/all');
+        const addVisitor = await axios.post('/api/visitors/all');
+        const response = await axios.get('/api/visitors/all');
         setVisitors(response.data);
-        const messages = await axios.get('http://localhost:7777/api/contacts/messages');
+        const messages = await axios.get('/api/contacts/messages');
         setMessages(messages.data);
       } catch (error) {
         console.error(error);
@@ -67,6 +70,8 @@ const Home = () => {
           className="mx-auto max-w-7xl px-4 sm:px-6 md:mt-0 lg:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between h-screen"
           id="/"
         >
+          {isViewportNarrow ? <><br /><br /><br /><br /><br /><br /></> : null}
+
           <div className="sm:text-center lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <motion.span

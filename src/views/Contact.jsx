@@ -3,6 +3,7 @@ import { contactLinks } from '../constants';
 import { ThemeContext } from '../themeProvider';
 import axios from 'axios';
 import Confirmed from "../views/Confirmed";
+import Hamburger from 'hamburger-react';
 
 
 const Contact = () => {
@@ -15,13 +16,16 @@ const Contact = () => {
     false
   );
 
+    const isViewportNarrow = window.innerWidth < 766;
+
+
   const handleSubmit = async (evt) => {
   evt.preventDefault();
     setIsHoveringElementVisible(true);
 
   try {
     console.log({name, email, message});
-    const response = await axios.post('http://localhost:7777/api/contacts/send', {
+    const response = await axios.post('/api/contacts/send', {
       name: name,
       email: email,
       message: message,
@@ -159,6 +163,7 @@ const Contact = () => {
               </div>
             </form>
           </div>
+                {isViewportNarrow ? <><br /><br /><br /><br /><br /><br /></> : null}
           <div className="w-full flex flex-col md:items-end  -mt-28 ">
             <h1 className="text-3xl font-bold">Phone</h1>
             <a

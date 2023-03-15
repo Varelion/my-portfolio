@@ -154,16 +154,13 @@ export const serviceData = [
   },
   {
     name: 'Mobile Application Development',
-    desc: `We provide a range of mobile application development services
-    including custom mobile development on Android platforms, building
-    cross-platform apps, designing user experience and integrating
-    novel mobile interfaces such as chat and voice`,
+    desc: `As a React Native developer, my specialty is crafting high-performance mobile apps that deliver exceptional user experiences. Whether building from scratch or enhancing an existing app, I possess the expertise to create stunning and responsive interfaces optimized for both Android and iOS devices. Let me help you achieve your mobile app goals with a fully functional and highly performant solution.`,
     img: 'https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-app-development-responsive-web-design-justicon-lineal-color-justicon.png',
   },
 
   {
     name: 'Cloud Management',
-    desc: `--`,
+    desc: `As a cloud developer, I possess the expertise to design, develop, and deploy applications and services in a cloud computing environment. With my full stack development background, I can offer end-to-end cloud solutions that are scalable, secure, and highly available. Let me help you achieve your cloud computing goals and take your applications to the next level.`,
     img: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-cloud-computing-data-analytics-flaticons-lineal-color-flat-icons-3.png',
   },
 ];
