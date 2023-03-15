@@ -1,5 +1,5 @@
 const { db } = require('./db')
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 80;
 const app = require('./app')
 const seed = require('../script/seed');
 
