@@ -213,10 +213,10 @@ const Contact = () => {
         </div>
       </div>
       <div
-        className={
+        id="footer" className={
           darkMode
-            ? 'w-full bg-white text-black text-lg py-4 flex justify-center '
-            : 'w-full bg-gray-900 text-white text-lg py-4 flex justify-center '
+            ? 'relative bottom-0 left-0 w-full bg-white text-black text-lg py-4 flex justify-center '
+            : 'relative bottom-0 left-0 w-full bg-gray-900 text-white text-lg py-4 flex justify-center '
         }
       >
         Made with
