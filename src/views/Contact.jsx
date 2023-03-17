@@ -79,13 +79,9 @@ const Contact = () => {
             Connect with me
           </h4>
           <p className="text-gray-500 text-xl">
-            If you wish to contact me with questions about my professional life,
+            Any messages you send here will be relayed to <strong>ALL</strong> of my e-mails!
             <br />
-            job opportunities, or anything at all please drop a message here,
-            <br />
-            and it will be automatically related to my all my e-mail addresses!
-            <br />
-            I will then get back to you as soon as I can!
+            So, please drop any inquiries here and I'll respond as soon as possible!
           </p>
         </div>
 
