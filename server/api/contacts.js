@@ -63,7 +63,7 @@ router.post('/send', async (req, res, next) => {
     const recipientEmails = ['ighormisc@gmail.com', 'business.8508@gmail.com'];
     let senderEmail = email;
     // message content and subject line
-    const subjectLine = `Varelion Message from ${senderEmail}`;
+    const subjectLine = `Varelion Message: ${senderEmail}`;
 
     // setup email data with unicode symbols
     let mailOptions = {
@@ -71,10 +71,9 @@ router.post('/send', async (req, res, next) => {
       to: recipientEmails.join(','),
       subject: subjectLine,
       text: message,
-      html: `<h2>Message from${senderEmail}, at the website varelion.com</h2>
+      html: `<h2>Message from${name}, at ${senderEmail}</h2>
       <br>
-      <br>
-      <p>${message}</p>`,
+      <p><strong>Message: </strong><br>${message}</p>`,
     };
 
     // send mail with defined transport object

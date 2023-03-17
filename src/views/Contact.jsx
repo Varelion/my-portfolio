@@ -30,7 +30,7 @@ const Contact = () => {
       email: email,
       message: message,
     });
-    alert("Thank you for your message; I will reply shortly!"); // Handle the response data here
+    // alert("Thank you for your message; I will reply shortly!"); // Handle the response data here
 
   } catch (error) {
     console.error(error); // Handle the error here
