@@ -27,14 +27,11 @@ const Home = () => {
     1000,
     'DevSecOps',
     1000,
-
   ];
 
-    const isViewportNarrow = window.innerWidth < 766;
+  const isViewportNarrow = window.innerWidth < 766;
 
-
-
- useEffect(() => {
+  useEffect(() => {
     const fetchVisitors = async () => {
       try {
         const addVisitor = await axios.post('/api/visitors/all');
@@ -48,14 +45,13 @@ const Home = () => {
     };
 
     fetchVisitors();
-    console.log(visitors)
+    console.log(visitors);
   }, []);
 
   const memoizedComponent = useMemo(
     () => <Typical steps={steps} loop={Infinity} wrapper="p" />,
     []
   );
-
 
   return (
     <>
@@ -70,12 +66,25 @@ const Home = () => {
           className="mx-auto max-w-7xl px-4 sm:px-6 md:mt-0 lg:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between h-screen"
           id="/"
         >
-          {isViewportNarrow ? <><br /><br /><br /><br /><br /><br /></> : null}
+          {isViewportNarrow ? (
+            <>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </>
+          ) : null}
 
           <div className="sm:text-center lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <motion.span
-                className={darkMode ? 'block text-black varelion text-6xl' : ' text-white varelion text-6xl'}
+                className={
+                  darkMode
+                    ? 'block text-black varelion text-6xl'
+                    : ' text-white varelion text-6xl'
+                }
               >
                 Varelion
               </motion.span>
@@ -90,11 +99,14 @@ const Home = () => {
                   : 'mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'
               }
             >
-              A software engineer with background and experience in cybersecurity, cloud management, app development, and game design. This website has had {visitors} visitors, and {messages} messages!
+              A software engineer with background and experience in
+              cybersecurity, cloud management, app development, and game design.
+              This website has had {visitors} visitors, and {messages} messages!
             </p>
             <div className="flex md:justify-start">
               {contactLinks.map((el, index) => (
-                <a key={index}
+                <a
+                  key={index}
                   href={el.link}
                   className="mr-5 cursor-pointer mt-8 hover:scale-125"
                 >
@@ -105,9 +117,14 @@ const Home = () => {
             </div>
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="mt-3 sm:mt-0 cursor-pointer w-1/2">
-                <Link to='x' className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-4 md:text-lg md:px-10">
+                <a
+                  href="https://docs.google.com/document/d/1q3DHJ3ymEXwBabCD9TvYvkYA7IkdTvNK/edit?usp=sharing&ouid=100016552118526811016&rtpof=true&sd=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"
+                >
                   Resume
-                </Link>
+                </a>
               </div>
             </div>
           </div>
