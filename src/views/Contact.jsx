@@ -71,7 +71,7 @@ const Contact = () => {
         <Confirmed name={name} email={email} message={message} />
       )}
       <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 ">
-        <h2 className="text-5xl font-bold px-4 md:px-0 text-center z-0 mb-12 -mt-2">
+        <h2 className="text-5xl font-bold px-4 md:px-0 text-center z-0 -mt-2">
           Contact
         </h2>
         <div>
