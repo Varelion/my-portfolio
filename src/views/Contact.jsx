@@ -79,9 +79,13 @@ const Contact = () => {
             Connect with me
           </h4>
           <p className="text-gray-500 text-xl">
-            If you want to know more about me or my work, or if you would just
+            If you wish to contact me with questions about my professional life,
             <br />
-            like to say hello, send me a message. I'd love to hear from you.
+            job opportunities, or anything at all please drop a message here,
+            <br />
+            and it will be automatically related to my all my e-mail addresses!
+            <br />
+            I will then get back to you as soon as I can!
           </p>
         </div>
 
