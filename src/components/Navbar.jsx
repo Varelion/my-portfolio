@@ -54,8 +54,8 @@ const Navbar = () => {
               href="/"
               className={
                 darkMode
-                  ? "font-serif text-3xl font-medium text-decoration-none whitespace-nowrap text-black"
-                  : "font-serif text-3xl font-medium text-decoration-none whitespace-nowrap text-white"
+                  ? "font-serif text-4xl font-medium text-decoration-none whitespace-nowrap text-black"
+                  : "font-serif text-4xl font-medium text-decoration-none whitespace-nowrap text-white"
               }
             >
               {`Varelion`}
