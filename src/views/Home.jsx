@@ -103,18 +103,18 @@ const Home = () => {
               cybersecurity, cloud management, app development, and game design.
               This website has had {visitors} visitors, and {messages} messages!
             </p>
-            <div className="flex md:justify-start">
+            <ul className="flex">
               {contactLinks.map((el, index) => (
                 <a
                   key={index}
                   href={el.link}
-                  className="mr-5 cursor-pointer mt-8 hover:scale-125"
+                  className="md:ml-6 md:mr-0 mr-6 cursor-pointer mt-4 hover:scale-125 flex flex-col justify-center items-center"
                 >
                   <img alt="" src={el.url} />
-                  <p className="text-md mt-2 hover:hidden">{el.name}</p>
+                  <p className="text-md mt-2">{el.name}</p>
                 </a>
               ))}
-            </div>
+            </ul>
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="mt-3 sm:mt-0 cursor-pointer w-1/2">
                 <a
