@@ -31,6 +31,9 @@ app.use((req, res, next) => {
 })
 
 // sends index.html
+app.use('/.well-known/acme-challenge', (req, res) => {
+  res.send('SkDQ2PJYaCp84cWGHOU2hxgp_5zSnN_NioQde6-mHWI');
+});
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'build/index.html'));
 })
