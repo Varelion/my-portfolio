@@ -41,8 +41,8 @@ const Services = () => {
                 }}
                 className={
                   theme.state.darkMode
-                    ? "md:w-96 p-4 bg-white rounded-lg flex items-center flex-col mt-8"
-                    : "md:w-96 p-4 bg-gray-100 rounded-lg flex items-center flex-col mt-8"
+                    ? "p-4 bg-white rounded-lg flex items-center flex-col mt-8"
+                    : "p-4 bg-gray-100 rounded-lg flex items-center flex-col mt-8"
                 }
               >
                 <img src={el.img} alt="" />

@@ -29,7 +29,7 @@ const Home = () => {
     1000,
   ];
 
-  const isViewportNarrow = window.innerWidth < 766;
+  // const isViewportNarrow = window.innerWidth < 766;
 
   useEffect(() => {
     const fetchVisitors = async () => {
@@ -66,8 +66,9 @@ const Home = () => {
           className="mx-auto max-w-7xl px-4 sm:px-6 md:mt-0 lg:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between h-screen"
           id="/"
         >
-          {isViewportNarrow ? (
+          {/* {isViewportNarrow ? (
             <>
+            <p>It is narrow</p>
               <br />
               <br />
               <br />
@@ -75,7 +76,7 @@ const Home = () => {
               <br />
               <br />
             </>
-          ) : null}
+          ) : <p>It is narrow</p>} */}
 
           <div className="sm:text-center lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
