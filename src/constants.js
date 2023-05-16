@@ -80,8 +80,8 @@ let theStack = [
     link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain.svg',
   },
   {
-    name: 'Heroku',
-    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-plain.svg',
+    name: 'Python',
+	  link: 'https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/python/python-original.svg',
   },
   {
     name: 'Github',
