@@ -9,7 +9,7 @@ function Confirmed({ name, email, message }) {
 	};
 
 	return isVisible ? (
-		<div className=" hovering-element rounded-md py-2 bg-gray-7500 text-white">
+		<div className="hovering-element rounded-md py-2 max-w-xl bg-white rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 dark:border-gray-700 my-6 mx-3">
 			<br />
 			<br />
 			{console.log(name)}
