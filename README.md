@@ -1,3 +1,7 @@
+# Running on Ec2
+We are running this through apache2, which is proxying PM2 that is running my-portfolio/server/index.js
+The server needs to run on port 3000, because that's what apache2 defaults to.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
