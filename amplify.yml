@@ -6,6 +6,7 @@ backend:
   phases:
     preBuild:
       commands:
+        - sudo apt install nodejs
         - npm install -g nodemon
     build:
       commands:
