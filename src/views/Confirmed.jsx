@@ -9,20 +9,19 @@ function Confirmed({ name, email, message }) {
 	};
 
 	return isVisible ? (
-		<div className=" hovering-element rounded-md py-2">
+		<div className=" hovering-element rounded-md py-2 bg-gray-7500 text-white">
 			<br />
 			<br />
 			{console.log(name)}
 			<p key={"p"}>
-				Thank you, {name}, for sending me a message! I shall respond as
-				soon as possible;; I'll try to reach you at the provided email,{" "}
-				{email}.
+				Thank you, {name}, for sending me a message!
+				I shall respond as soon as possible; I'll try to reach you at the provided email,"{email}".
 			</p>
 			<br />
 			And, just so we're both on the same page — the message you sent me
 			is:
 			<br />
-			{message}
+				"{message}"
 			<br />
 			<br />
 			<button
