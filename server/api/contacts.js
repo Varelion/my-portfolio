@@ -60,7 +60,7 @@ router.post('/send', async (req, res, next) => {
 
     // sender and recipient email addresses
     const myEmail = 'business.8508@gmail.com';
-    const recipientEmails = ['ighormisc@gmail.com', 'business.8508@gmail.com'];
+    const recipientEmails = ['ighormisc@gmail.com', 'business.8508@gmail.com', 'Varelion@outlook.com'];
     let senderEmail = email;
     // message content and subject line
     const subjectLine = `Varelion Message: ${senderEmail}`;
