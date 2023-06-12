@@ -132,7 +132,7 @@ export const contactLinks = [
   {
     name: 'Instagram',
     url: 'https://img.icons8.com/doodle/40/000000/instagram-new--v2.png',
-    link: 'https://www.instagram.com/vonvolion/',
+	link: 'https://i.imgur.com/N7yq3HF.png',
   },
   {
     name: 'Github',
