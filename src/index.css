@@ -19,7 +19,6 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -61,6 +60,6 @@ code {
   z-index: 9999;
 }
 
-.varelion{
+.varelion {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }

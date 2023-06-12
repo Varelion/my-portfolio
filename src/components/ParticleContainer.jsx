@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ParticleContainer = () => {
-    
-  return (
-    <div>ParticleContainer</div>
-  )
-}
+  return <div>ParticleContainer</div>;
+};
 
-export default ParticleContainer
+export default ParticleContainer;

@@ -1,8 +1,7 @@
-
 const {
   db,
   models: { User, Contact, Visitor },
-} = require('../server/db');
+} = require("../server/db");
 
 /**
  * seed - this function clears the database, updates tables to
@@ -10,12 +9,12 @@ const {
  */
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
-  console.log('db synced!');
+  console.log("db synced!");
 
   // Creating Users
   const users = await Promise.all([
-    User.create({ username: 'cody', password: '123' }),
-    User.create({ username: 'murphy', password: '123' }),
+    User.create({ username: "cody", password: "123" }),
+    User.create({ username: "murphy", password: "123" }),
   ]);
 
   // const users = await Promise.all([
@@ -25,20 +24,20 @@ async function seed() {
 
   const contacts = await Promise.all([
     Contact.create({
-      name: 'cody',
-      email: 'loremIpsum@gmail.com',
-      message: 'lotem ipsum',
+      name: "cody",
+      email: "loremIpsum@gmail.com",
+      message: "lotem ipsum",
     }),
     Contact.create({
-      name: 'murphy',
-      email: 'loremIpsum@gmail.com',
-      message: 'lotem ipsum',
+      name: "murphy",
+      email: "loremIpsum@gmail.com",
+      message: "lotem ipsum",
     }),
   ]);
 
   const visitor = await Promise.all([
     Visitor.create({
-      ip: '23123',
+      ip: "23123",
     }),
     Visitor.create({
       ip: 23123,
@@ -66,16 +65,16 @@ async function seed() {
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log('seeding...')
+  console.log("seeding...");
   try {
-    await seed()
+    await seed();
   } catch (err) {
-    console.error(err)
-    process.exitCode = 1
+    console.error(err);
+    process.exitCode = 1;
   } finally {
-    console.log('closing db connection')
-    await db.close()
-    console.log('db connection closed')
+    console.log("closing db connection");
+    await db.close();
+    console.log("db connection closed");
   }
 }
 
@@ -85,8 +84,8 @@ async function runSeed() {
   any errors that might occur inside of `seed`.
 */
 if (module === require.main) {
-  runSeed()
+  runSeed();
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = seed
+module.exports = seed;
