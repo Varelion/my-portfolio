@@ -153,8 +153,8 @@ export const serviceData = [
     img: 'https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-web-development-coding-kiranshastry-lineal-color-kiranshastry.png',
   },
   {
-    name: 'Mobile Application Development',
-    desc: `As a React Native developer, my specialty is crafting high-performance mobile apps that deliver exceptional user experiences. Whether building from scratch or enhancing an existing app, I possess the expertise to create stunning and responsive interfaces optimized for both Android and iOS devices. Let me help you achieve your mobile app goals with a fully functional and highly performant solution.`,
+    name: 'Cybersecurity',
+    desc: `I bring military standards to the field of cybersecurity, posessing both experience in cybersecurity analysis, auditing, managing, reporting, an cybersecurity architecture design, I am here to help secure you and your business. I spend a great deal of time analyzing and understanding the tactics, techniques, and procedures of threat actors so that I may better adapt security measures to meet the ever-changing landscape of the cybersecurity battlefield. If you are looking for someone to be pro-active in defending against both cutting edge attacks and CVEs, look no further.`,
     img: 'https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-app-development-responsive-web-design-justicon-lineal-color-justicon.png',
   },
 

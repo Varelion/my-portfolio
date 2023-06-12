@@ -8,6 +8,14 @@ backend:
       commands:
         - sudo apt install nodejs
         - npm install -g nodemon
+        - sudo apt install npm
+        - npm i
+        - sudo apt install postgresql
+        - sudo -u postgres psql
+        - CREATE USER administrator WITH PASSWORD 'password';
+        - ALTER USER administrator WITH SUPERUSER;
+        - CREATE DATABASE portfolio;psql -U administrator
+
     build:
       commands:
         - npm run start:dev
