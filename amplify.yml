@@ -6,7 +6,7 @@ backend:
   phases:
     preBuild:
       commands:
-        - npm run start:dev
+        - npm install -g nodemon
     build:
       commands:
         - npm run start:dev
