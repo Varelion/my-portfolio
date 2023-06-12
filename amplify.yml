@@ -20,7 +20,7 @@ backend:
       commands:
         - npm run start:dev
     postBuild:
-        commands:
+      commands:
         - npm run start:dev
 frontend:
   phases:
@@ -33,14 +33,14 @@ frontend:
         - npm run build:ignorepeerdeps
   artifacts:
     files:
-        - location
-        - location
+      - location
+      - location
     discard-paths: yes
     baseDirectory: location
   cache:
     paths:
-        - path
-        - path
+      - path
+      - path
 test:
   phases:
     preTest:
@@ -54,7 +54,7 @@ test:
         - ls
   artifacts:
     files:
-        - location
-        - location
+      - location
+      - location
     configFilePath:
     baseDirectory: ./my-portfolio/buildgit pul

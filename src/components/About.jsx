@@ -40,8 +40,7 @@ const About = () => {
               release.Currently, I'm focused on the backend development.
             </p>
           </motion.div>
-          <motion.div
-          >
+          <motion.div>
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
               Technologies and Tools
             </h4>

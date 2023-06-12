@@ -1,4 +1,5 @@
 # Running on Ec2
+
 We are running this through apache2, which is proxying PM2 that is running my-portfolio/server/index.js
 The server needs to run on port 3000, because that's what apache2 defaults to.
 
@@ -9,13 +10,13 @@ Make sure below is in sudo nano /etc/apache2/apache2.conf
     Require all granted
 </Directory>`
 
-Make sure varelion.conf's DocumentRoot is 
-    DocumentRoot /home/ubuntu/my-portfolio/build/
-    
- ## Certificate Renewal 
-  `sudo apt-get install certbot python3-certbot-apache`
-`sudo apt-get install certbot python3-certbot-apache`
+Make sure varelion.conf's DocumentRoot is
+DocumentRoot /home/ubuntu/my-portfolio/build/
 
+## Certificate Renewal
+
+`sudo apt-get install certbot python3-certbot-apache`
+`sudo apt-get install certbot python3-certbot-apache`
 
 # Getting Started with Create React App
 

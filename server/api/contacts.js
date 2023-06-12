@@ -1,27 +1,31 @@
-const router = require('express').Router();
-const cors = require('cors')
-const nodemailer = require('nodemailer');
+const router = require("express").Router();
+const cors = require("cors");
+const nodemailer = require("nodemailer");
 const {
   models: { Contact },
-} = require('../db');
+} = require("../db");
 module.exports = router;
 
 router.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: "http://localhost:3000",
   })
 );
 
-router.get('/messages', async (req, res, next) => {
+router.get("/messages", async (req, res, next) => {
   try {
     const numberOfMessages = await Contact.findAll();
     let response = { totalMessages: numberOfMessages.length };
     if (
-      !response || response === undefined ||
-      typeof response.totalMessages !== 'number' ||
+      !response ||
+      response === undefined ||
+      typeof response.totalMessages !== "number" ||
       isNaN(response.totalMessages)
     ) {
-      res.status(400).json({ error: 'Please call 862-888-8508 and notify Varelion about this error...' });
+      res.status(400).json({
+        error:
+          "Please call 862-888-8508 and notify Varelion about this error...",
+      });
     } else {
       res.status(201).json(response.totalMessages);
     }
@@ -30,7 +34,7 @@ router.get('/messages', async (req, res, next) => {
   }
 });
 
-router.post('/send', async (req, res, next) => {
+router.post("/send", async (req, res, next) => {
   try {
     const { name, email, message } = req.body;
     console.log(
@@ -46,21 +50,28 @@ router.post('/send', async (req, res, next) => {
       `\n`,
       email,
       `\n`,
-      message,req.params,req.body, req.headers
+      message,
+      req.params,
+      req.body,
+      req.headers
     );
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
-        user: 'business.8508@gmail.com',
-        pass: 'nhotuuabnopufdyd',
+        user: "business.8508@gmail.com",
+        pass: "nhotuuabnopufdyd",
       },
     });
 
     // sender and recipient email addresses
-    const myEmail = 'business.8508@gmail.com';
-    const recipientEmails = ['ighormisc@gmail.com', 'business.8508@gmail.com', 'Varelion@outlook.com'];
+    const myEmail = "business.8508@gmail.com";
+    const recipientEmails = [
+      "ighormisc@gmail.com",
+      "business.8508@gmail.com",
+      "Varelion@outlook.com",
+    ];
     let senderEmail = email;
     // message content and subject line
     const subjectLine = `Varelion Message: ${senderEmail}`;
@@ -68,7 +79,7 @@ router.post('/send', async (req, res, next) => {
     // setup email data with unicode symbols
     let mailOptions = {
       from: myEmail,
-      to: recipientEmails.join(','),
+      to: recipientEmails.join(","),
       subject: subjectLine,
       text: message,
       html: `<h2>Message from${name}, at ${senderEmail}</h2>

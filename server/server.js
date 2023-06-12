@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+const path = require("path");
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
+require("dotenv").config();
 // const requestIp = require('request-ip');
 
 const app = express();
@@ -17,12 +17,12 @@ const app = express();
 //   })
 // );
 
-app.post('/api/contacts/send', (req, res) => {
+app.post("/api/contacts/send", (req, res) => {
   // handle the request here
-  console.log('cors lol');
+  console.log("cors lol");
 });
 
-const http = require('http').Server(app);
+const http = require("http").Server(app);
 // const socket = require('socket.io');
 
 // const io = socket(http);
@@ -42,10 +42,10 @@ const http = require('http').Server(app);
 //#endregion IPLOGGING
 
 // logging middleware
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 // static file-serving middleware
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 // body parsing middleware
 app.use(bodyParser.json());
@@ -58,20 +58,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // });
 
-
-app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "..", "public/index.html"))
 );
 
 // Send index.html for any requests that don't match one of the API routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 // any remaining requests with an extension (.js, .css, etc.) send 404
 app.use((req, res, next) => {
   if (path.extname(req.path).length) {
-    const err = new Error('Not found');
+    const err = new Error("Not found");
     err.status = 404;
     next(err);
   } else {
@@ -83,7 +82,7 @@ app.use((req, res, next) => {
 app.use(function (err, req, res, next) {
   console.error(err);
   console.error(err.stack);
-  res.status(err.status || 500).send(err.message || 'Internal server error.');
+  res.status(err.status || 500).send(err.message || "Internal server error.");
 });
 
 module.exports = http;

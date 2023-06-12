@@ -1,16 +1,16 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { contactLinks } from '../constants';
-import { ThemeContext } from '../themeProvider';
-import axios from 'axios';
-import Confirmed from '../views/Confirmed';
-import Hamburger from 'hamburger-react';
+import React, { useContext, useState, useEffect } from "react";
+import { contactLinks } from "../constants";
+import { ThemeContext } from "../themeProvider";
+import axios from "axios";
+import Confirmed from "../views/Confirmed";
+import Hamburger from "hamburger-react";
 
 const Contact = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [isHoveringElementVisible, setIsHoveringElementVisible] =
     useState(false);
 
@@ -22,7 +22,7 @@ const Contact = () => {
 
     try {
       console.log({ name, email, message });
-      const response = await axios.post('/api/contacts/send', {
+      const response = await axios.post("/api/contacts/send", {
         name: name,
         email: email,
         message: message,
@@ -36,20 +36,20 @@ const Contact = () => {
   const handleChange = (evt) => {
     const changing = evt.target.name;
     switch (changing) {
-      case 'name':
+      case "name":
         setName(evt.target.value);
         break;
 
-      case 'email':
+      case "email":
         setEmail(evt.target.value);
         break;
 
-      case 'message':
+      case "message":
         setMessage(evt.target.value);
         break;
 
       default:
-        console.log('handleChange switch case statement default');
+        console.log("handleChange switch case statement default");
         break;
     }
   };
@@ -59,9 +59,7 @@ const Contact = () => {
       <div
         id="contact"
         className={
-          darkMode
-            ? 'bg-gray-100 py-10 '
-            : 'bg-black py-10 text-white'
+          darkMode ? "bg-gray-100 py-10 " : "bg-black py-10 text-white"
         }
       >
         {isHoveringElementVisible && (
@@ -76,7 +74,7 @@ const Contact = () => {
               Connect with me
             </h4>
             <p className="text-gray-500 text-xl">
-              Any messages you send here will be relayed to <strong>ALL</strong>{' '}
+              Any messages you send here will be relayed to <strong>ALL</strong>{" "}
               of my e-mails!
               <br />
               So, please drop any inquiries here and I'll respond as soon as
@@ -91,8 +89,8 @@ const Contact = () => {
                   <label
                     className={
                       darkMode
-                        ? 'block mb-2 text-lg font-medium text-gray-900'
-                        : 'block mb-2 text-lg font-medium text-white'
+                        ? "block mb-2 text-lg font-medium text-gray-900"
+                        : "block mb-2 text-lg font-medium text-white"
                     }
                   >
                     Name
@@ -112,8 +110,8 @@ const Contact = () => {
                   <label
                     className={
                       darkMode
-                        ? 'block mb-2 text-lg font-medium text-gray-900'
-                        : 'block mb-2 text-lg font-medium text-white'
+                        ? "block mb-2 text-lg font-medium text-gray-900"
+                        : "block mb-2 text-lg font-medium text-white"
                     }
                   >
                     Email
@@ -133,8 +131,8 @@ const Contact = () => {
                   <label
                     className={
                       darkMode
-                        ? 'block mb-2 text-lg font-medium text-gray-900'
-                        : 'block mb-2 text-lg font-medium text-white'
+                        ? "block mb-2 text-lg font-medium text-gray-900"
+                        : "block mb-2 text-lg font-medium text-white"
                     }
                   >
                     Message
@@ -152,9 +150,7 @@ const Contact = () => {
                 </div>
                 <div className="flex justify-between ">
                   <div className="underline">
-                    <a href="mailto:Varelion@outlook.com">
-                      Or email me here.
-                    </a>
+                    <a href="mailto:Varelion@outlook.com">Or email me here.</a>
                   </div>
                   <button
                     type="submit"
@@ -231,18 +227,18 @@ const Contact = () => {
         id="footer"
         className={
           darkMode
-            ? 'relative bottom-0 left-0 w-full bg-white text-black text-lg py-4 flex justify-center '
-            : 'relative bottom-0 left-0 bg-gray-900 text-white text-lg py-4 flex items-center justify-center'
+            ? "relative bottom-0 left-0 w-full bg-white text-black text-lg py-4 flex justify-center "
+            : "relative bottom-0 left-0 bg-gray-900 text-white text-lg py-4 flex items-center justify-center"
         }
       >
         <>
-          {' '}
+          {" "}
           Made with
           <div className="text-red-500 px-2 text-2xl">&#10084;</div>
           by Varelion
         </>
       </div>
-      </>
+    </>
   );
 };
 
