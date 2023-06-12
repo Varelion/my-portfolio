@@ -12,6 +12,7 @@ Make sure below is in sudo nano /etc/apache2/apache2.conf
 Make sure varelion.conf's DocumentRoot is 
     DocumentRoot /home/ubuntu/my-portfolio/build/
     
+ ## Certificate Renewal 
   `sudo apt-get install certbot python3-certbot-apache`
 `sudo apt-get install certbot python3-certbot-apache`
 
