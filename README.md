@@ -3,11 +3,11 @@ We are running this through apache2, which is proxying PM2 that is running my-po
 The server needs to run on port 3000, because that's what apache2 defaults to.
 
 Make sure below is in sudo nano /etc/apache2/apache2.conf
-```<Directory /home/ubuntu/my-portfolio/build/>
+`<Directory /home/ubuntu/my-portfolio/build/>
     Options Indexes FollowSymLinks
     AllowOverride None
     Require all granted
-</Directory>```
+</Directory>`
 
 Make sure varelion.conf's DocumentRoot is 
     DocumentRoot /home/ubuntu/my-portfolio/build/
