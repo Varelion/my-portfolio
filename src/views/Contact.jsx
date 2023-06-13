@@ -188,7 +188,7 @@ const Contact = () => {
                 href="https://discord.gg/hvA6HF3gw3"
                 className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
               >
-                JOESTAR#8888
+                @dev_sec_ops
               </a>
               <h1 className="text-3xl font-bold">Email</h1>
               <a
