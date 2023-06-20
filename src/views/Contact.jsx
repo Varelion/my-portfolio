@@ -150,7 +150,7 @@ const Contact = () => {
                 </div>
                 <div className="flex justify-between ">
                   <div className="underline">
-                    <a href="mailto:Varelion@outlook.com">Or email me here.</a>
+                    <a href="mailto:Secure@Varelion.com">Or email me here.</a>
                   </div>
                   <button
                     type="submit"
@@ -192,10 +192,10 @@ const Contact = () => {
               </a>
               <h1 className="text-3xl font-bold">Email</h1>
               <a
-                href="mailto:Varelion@outlook.com"
+                href="mailto:Secure@Varelion.com"
                 className="mb-12 mt-4 font-semibold text-blue-700 block uppercase"
               >
-                Varelion@outlook.com
+                Secure@Varelion.com
               </a>
               <h1 className="text-3xl  font-bold">Address</h1>
               <a
