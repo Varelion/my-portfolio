@@ -16693,7 +16693,7 @@ object-assign
             var canUseTextInputEvent =
               canUseDOM && "TextEvent" in window && !documentMode; // In IE9+, we have access to composition events, but the data supplied
             // by the native compositionend event may be incorrect. Japanese ideographic
-            // spaces, for instance (\u3000) are not recorded correctly.
+            // spaces, for instance (\u3001) are not recorded correctly.
 
             var useFallbackCompositionData =
               canUseDOM &&
@@ -34474,8 +34474,8 @@ object-assign
                 ? 1080
                 : timeElapsed < 1920
                 ? 1920
-                : timeElapsed < 3000
-                ? 3000
+                : timeElapsed < 3001
+                ? 3001
                 : timeElapsed < 4320
                 ? 4320
                 : ceil(timeElapsed / 1960) * 1960;
@@ -38226,7 +38226,7 @@ object-assign
   selectorFactory, which has the signature:
 
     (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
-  
+
   connect passes its args to connectAdvanced as options, which will in turn pass them to
   selectorFactory each time a Connect component instance is instantiated or hot reloaded.
 

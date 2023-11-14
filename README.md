@@ -1,7 +1,7 @@
 # Running on Ec2
 
 We are running this through apache2, which is proxying PM2 that is running my-portfolio/server/index.js
-The server needs to run on port 3000, because that's what apache2 defaults to.
+The server needs to run on port 3001, because that's what apache2 defaults to.
 
 Make sure below is in sudo nano /etc/apache2/apache2.conf
 `<Directory /home/ubuntu/my-portfolio/build/>
@@ -29,7 +29,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
